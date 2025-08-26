@@ -1,12 +1,13 @@
 {
   "name": "utility-materials-theme",
-  "displayName": "Utility Materials Protocol",
-  "description": "Industrial safety theme with TV static effects - safety orange colors inspired by utility energy solutions",
-  "version": "2.0.0",
-  "publisher": "alexh",
+  "displayName": "Utility Materials Theme",
+  "description": "Industrial safety theme with TV static effects - safety orange colors inspired by utility materials inc (https://utility.materials.nyc)",
+  "version": "1.0.2",
+  "publisher": "utility-materials",
+  "icon": "icon.png",
   "author": {
-    "name": "Alex H",
-    "email": "alex@utilitymat.com"
+    "name": "Alex Haynes",
+    "email": "alex@alexhaynes.org"
   },
   "license": "MIT",
   "repository": {
@@ -23,7 +24,8 @@
     "materials",
     "tv static",
     "cyberpunk",
-    "dashboard"
+    "dashboard",
+    "utility materials"
   ],
   "engines": {
     "vscode": "^1.74.0"
