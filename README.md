@@ -102,21 +102,6 @@ When enabled, the subtle static animation provides an authentic industrial monit
 - Restart VSCode after making changes
 - Reduce static opacity if effect is too strong
 
-### Performance
-The TV static effect is optimized for minimal performance impact:
-- Uses CSS animations instead of JavaScript
-- Very low opacity to maintain readability
-- Lightweight gradient-based approach
-
-## Contributing
-
-This theme is inspired by the utility energy solutions design system. If you'd like to contribute improvements:
-
-1. Modify the theme colors in `themes/Utility Materials-color-theme.json`
-2. Update the CSS effects in `tv-static.css`
-3. Test thoroughly across different file types
-4. Submit your changes
-
 ## License
 
 MIT License - Feel free to modify and distribute.
@@ -125,8 +110,7 @@ MIT License - Feel free to modify and distribute.
 
 - Inspired by the Cyberpunk SCARLET Protocol theme
 - Color palette based on industrial safety standards
-- TV static effect techniques from utility-energy-solutions project
-- Built for the utility materials and industrial design community
+- Built for the utility materials community
 
 ---
 
