@@ -1,0 +1,411 @@
+/* CLEAN GREY & BRIGHT SAFETY ORANGE TV STATIC */
+/* This CSS should be used with the Custom UI Style extension */
+
+/* DEAD SIMPLE - covers absolutely everything */
+html,
+body {
+  position: relative !important;
+}
+
+html::before,
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.04;
+  background: 
+    repeating-radial-gradient(#1a1a1a 0 0.0001%, #FF6700 0 0.0002%) 50% 0/2500px 2500px,
+    repeating-conic-gradient(#1a1a1a 0 0.0001%, #B19CD9 0 0.0002%) 60% 60%/2500px 2500px;
+  background-blend-mode: screen;
+  animation: staticTv 2s infinite alternate;
+}
+
+html::after,
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.02;
+  background: 
+    repeating-radial-gradient(#B19CD9 0 0.0001%, #1a1a1a 0 0.0002%) 30% 40%/1800px 1800px,
+    repeating-conic-gradient(#FF6700 0 0.0001%, #1a1a1a 0 0.0002%) 70% 30%/2200px 2200px;
+  background-blend-mode: screen;
+  animation: staticTv2 3s infinite alternate;
+}
+
+/* UNIVERSAL TV Static Effect - AGGRESSIVE targeting for ALL backgrounds */
+body,
+.monaco-workbench,
+.monaco-workbench .part,
+.monaco-workbench .part.sidebar,
+.monaco-workbench .part.panel,
+.monaco-workbench .part.auxiliarybar,
+.monaco-workbench .part.activitybar,
+.monaco-workbench .part.titlebar,
+.monaco-workbench .part.statusbar,
+.monaco-workbench .part.editor,
+.monaco-editor,
+.composite,
+.composite.viewlet,
+.viewlet,
+.panel,
+.auxiliary,
+div[id*="workbench"],
+div[class*="sidebar"],
+div[class*="panel"],
+div[class*="explorer"],
+div[class*="settings"],
+div[class*="part"],
+.split-view-view,
+.monaco-pane-view,
+.monaco-list-rows,
+.tree-explorer-viewlet-tree-view,
+.settings-editor,
+.preferences-editor,
+.quick-input-widget,
+.suggest-widget,
+.context-view,
+.monaco-menu {
+  position: relative !important;
+}
+
+/* SUPER AGGRESSIVE Primary TV Static Layer - covers EVERYTHING */
+body::before,
+.monaco-workbench::before,
+.monaco-workbench .part::before,
+.monaco-workbench .part.sidebar::before,
+.monaco-workbench .part.panel::before,
+.monaco-workbench .part.auxiliarybar::before,
+.monaco-workbench .part.activitybar::before,
+.monaco-workbench .part.editor::before,
+.monaco-editor::before,
+.composite::before,
+.composite.viewlet::before,
+.viewlet::before,
+.panel::before,
+.auxiliary::before,
+div[id*="workbench"]::before,
+div[class*="sidebar"]::before,
+div[class*="panel"]::before,
+div[class*="explorer"]::before,
+div[class*="settings"]::before,
+div[class*="part"]::before,
+.split-view-view::before,
+.monaco-pane-view::before,
+.tree-explorer-viewlet-tree-view::before,
+.settings-editor::before,
+.preferences-editor::before,
+.quick-input-widget::before,
+.suggest-widget::before,
+.context-view::before,
+.monaco-menu::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.04;
+  background: 
+    repeating-radial-gradient(#1a1a1a 0 0.0001%, #FF6700 0 0.0002%) 50% 0/2500px 2500px,
+    repeating-conic-gradient(#1a1a1a 0 0.0001%, #B19CD9 0 0.0002%) 60% 60%/2500px 2500px;
+  background-blend-mode: screen;
+  animation: staticTv 2s infinite alternate;
+}
+
+/* SUPER AGGRESSIVE Secondary interference layer - covers EVERYTHING */
+body::after,
+.monaco-workbench::after,
+.monaco-workbench .part::after,
+.monaco-workbench .part.sidebar::after,
+.monaco-workbench .part.panel::after,
+.monaco-workbench .part.auxiliarybar::after,
+.monaco-workbench .part.activitybar::after,
+.monaco-workbench .part.editor::after,
+.monaco-editor::after,
+.composite::after,
+.composite.viewlet::after,
+.viewlet::after,
+.panel::after,
+.auxiliary::after,
+div[id*="workbench"]::after,
+div[class*="sidebar"]::after,
+div[class*="panel"]::after,
+div[class*="explorer"]::after,
+div[class*="settings"]::after,
+div[class*="part"]::after,
+.split-view-view::after,
+.monaco-pane-view::after,
+.tree-explorer-viewlet-tree-view::after,
+.settings-editor::after,
+.preferences-editor::after,
+.quick-input-widget::after,
+.suggest-widget::after,
+.context-view::after,
+.monaco-menu::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.02;
+  background: 
+    repeating-radial-gradient(#B19CD9 0 0.0001%, #1a1a1a 0 0.0002%) 30% 40%/1800px 1800px,
+    repeating-conic-gradient(#FF6700 0 0.0001%, #1a1a1a 0 0.0002%) 70% 30%/2200px 2200px;
+  background-blend-mode: screen;
+  animation: staticTv2 3s infinite alternate;
+}
+
+/* Keyframe animations - very subtle movement, no opacity changes */
+@keyframes staticTv {
+  0% { 
+    background-position: 50% 0, 60% 50%;
+  }
+  100% { 
+    background-position: 51% 1%, 61% 51%;
+  }
+}
+
+@keyframes staticTv2 {
+  0% { 
+    background-position: 30% 40%, 70% 30%;
+  }
+  100% { 
+    background-position: 31% 41%, 71% 31%;
+  }
+}
+
+/* Removed scanline effect - too flashy */
+
+/* BRIGHT safety orange glow effects */
+.monaco-editor .current-line {
+  box-shadow: 0 0 12px rgba(255, 103, 0, 0.2);
+}
+
+.monaco-editor .cursor {
+  box-shadow: 0 0 8px rgba(255, 103, 0, 0.8);
+}
+
+/* Enhanced Terminal static effect - orange/grey mix */
+.terminal-wrapper .xterm-screen,
+.integrated-terminal,
+.terminal-tab,
+.terminal-outer-container {
+  position: relative;
+}
+
+.terminal-wrapper .xterm-screen::before,
+.integrated-terminal::before,
+.terminal-tab::before,
+.terminal-outer-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.03;
+  background: 
+    repeating-radial-gradient(#FF6700 0 0.0001%, #B19CD9 0 0.0002%) 45% 25%/1200px 1200px;
+  animation: terminalStatic 4s infinite alternate;
+}
+
+/* File Explorer enhanced static */
+.explorer-folders-view,
+.outline-view,
+.tree-explorer-viewlet-tree-view,
+.monaco-list,
+.monaco-tree,
+.files-explorer-viewer {
+  position: relative;
+}
+
+.explorer-folders-view::before,
+.outline-view::before,
+.tree-explorer-viewlet-tree-view::before,
+.monaco-list::before,
+.monaco-tree::before,
+.files-explorer-viewer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.02;
+  background: 
+    repeating-radial-gradient(#1a1a1a 0 0.0001%, #FF6700 0 0.0002%) 35% 15%/1800px 1800px;
+  animation: explorerStatic 5s infinite alternate;
+}
+
+/* Settings panel enhanced static */
+.settings-tree-container,
+.settings-body,
+.settings-toc-container,
+.preferences-tree-container {
+  position: relative;
+}
+
+.settings-tree-container::before,
+.settings-body::before,
+.settings-toc-container::before,
+.preferences-tree-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.025;
+  background: 
+    repeating-radial-gradient(#B19CD9 0 0.0001%, #1a1a1a 0 0.0002%) 25% 35%/1600px 1600px;
+  animation: settingsStatic 6s infinite alternate;
+}
+
+@keyframes terminalStatic {
+  0% { 
+    background-position: 45% 25%;
+  }
+  100% { 
+    background-position: 46% 26%;
+  }
+}
+
+@keyframes explorerStatic {
+  0% { 
+    background-position: 35% 15%;
+  }
+  100% { 
+    background-position: 36% 16%;
+  }
+}
+
+@keyframes settingsStatic {
+  0% { 
+    background-position: 25% 35%;
+  }
+  100% { 
+    background-position: 26% 36%;
+  }
+}
+
+/* BRIGHT safety orange accent glows */
+.activity-barItem.checked .activity-bar-badge {
+  box-shadow: 0 0 12px rgba(255, 103, 0, 0.8);
+}
+
+.tab.active {
+  box-shadow: inset 0 -3px 0 rgba(255, 103, 0, 1);
+}
+
+/* Light purple accent glows for subtle contrast */
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row.focused {
+  box-shadow: 0 0 8px rgba(177, 156, 217, 0.4);
+}
+
+/* Enhanced bracket matching glow */
+.monaco-editor .bracket-match {
+  box-shadow: 0 0 6px rgba(255, 103, 0, 0.6);
+}
+
+/* Selection highlighting - bright orange */
+.monaco-editor .selected-text {
+  background: rgba(255, 103, 0, 0.3) !important;
+  box-shadow: 0 0 4px rgba(255, 103, 0, 0.4);
+}
+
+/* Error underlines - bright red-orange */
+.monaco-editor .squiggly-error {
+  border-bottom: 2px solid #FF4500;
+  filter: drop-shadow(0 0 2px #FF4500);
+}
+
+/* Warning underlines - gold */
+.monaco-editor .squiggly-warning {
+  border-bottom: 2px solid #FFD700;
+  filter: drop-shadow(0 0 2px #FFD700);
+}
+
+/* Info underlines - light purple */
+.monaco-editor .squiggly-info {
+  border-bottom: 2px solid #B19CD9;
+  filter: drop-shadow(0 0 2px #B19CD9);
+}
+
+/* Minimap - subtle orange tint */
+.monaco-editor .minimap-decorations-layer .minimap-decoration {
+  background: rgba(255, 103, 0, 0.1);
+}
+
+/* Scrollbar - safety orange */
+.monaco-scrollable-element > .scrollbar > .slider {
+  background: rgba(255, 103, 0, 0.6) !important;
+}
+
+.monaco-scrollable-element > .scrollbar > .slider:hover {
+  background: rgba(255, 103, 0, 0.8) !important;
+}
+
+/* Find widget - bright orange highlighting */
+.monaco-editor .find-widget {
+  border: 2px solid #FF6700;
+  box-shadow: 0 0 12px rgba(255, 103, 0, 0.4);
+}
+
+/* Command palette - safety orange accents */
+.monaco-workbench .quick-input-widget {
+  border: 1px solid #FF6700;
+  box-shadow: 0 0 16px rgba(255, 103, 0, 0.3);
+}
+
+/* Status bar - enhanced orange glow */
+.monaco-workbench .part.statusbar {
+  border-top: 2px solid #FF6700;
+  box-shadow: 0 -2px 8px rgba(255, 103, 0, 0.3);
+}
+
+/* Utility materials branding - bright and visible */
+.monaco-editor .margin-view-overlays::after {
+  content: "UTIL-MAT";
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 10px;
+  color: rgba(255, 103, 0, 0.3);
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  letter-spacing: 2px;
+  pointer-events: none;
+  text-shadow: 0 0 4px rgba(255, 103, 0, 0.6);
+}
+
+/* Panel borders - safety orange */
+.monaco-workbench .part.panel > .title {
+  border-bottom: 2px solid #FF6700;
+}
+
+/* Sidebar - subtle light purple accent for contrast */
+.monaco-workbench .part.sidebar > .title {
+  border-bottom: 1px solid #B19CD9;
+}
