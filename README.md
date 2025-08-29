@@ -13,28 +13,7 @@ A VSCode theme inspired by industrial safety design and utility energy solutions
 
 ## Installation
 
-### Method 1: Install from VSIX (Recommended)
-
-1. Download the `utility-materials-theme-0.0.1.vsix` file
-2. Open VSCode
-3. Press `Cmd+Shift+P` (macOS) or `Ctrl+Shift+P` (Windows/Linux)
-4. Type "Extensions: Install from VSIX..."
-5. Select the downloaded VSIX file
-
-### Method 2: Manual Installation
-
-1. Copy this entire folder to your VSCode extensions directory:
-   - **macOS**: `~/.vscode/extensions/`
-   - **Windows**: `%USERPROFILE%\.vscode\extensions\`
-   - **Linux**: `~/.vscode/extensions/`
-
-2. Restart VSCode
-
-## Activation
-
-1. Press `Cmd+Shift+P` / `Ctrl+Shift+P`
-2. Type "Preferences: Color Theme"
-3. Select "Utility Materials Protocol"
+Search for `Utility Materials Theme` in your VSCode fork of chose.
 
 ## TV Static Effect (Optional)
 
@@ -75,7 +54,19 @@ Add this to your VSCode `settings.json`:
 | Utility Green | `#00ffc8` | Success states, cursors |
 | Warning Yellow | `#ffcc00` | Cautions, modifications |
 
-## Screenshots
+## Markdown Preview Enhanced
+
+### Prerequisites
+Install the **Markdown Preview Enhanced** extension:
+1. Open VSCode Extensions (`Cmd+Shift+X` / `Ctrl+Shift+X`)
+2. Search for "Markdown Preview Enhanced" by shd101wyy
+3. Install the extension
+
+### Setup Static Effect
+1. Copy the contents of `markdown-preview-enhanced.less`
+2. Press `Cmd+Shift+P` / `Ctrl+Shift+P`
+3. Type "Markdown Preview Enhanced: Customize CSS"
+4. Paste the LESS content
 
 ### Editor View
 The main editor features safety orange syntax highlighting with industrial dark backgrounds.

@@ -1,0 +1,430 @@
+/* TV Static Dark Mode Theme for Markdown Preview */
+/* Inspired by utility-materials-theme */
+
+/* Subtle static overlay effect */
+.markdown-preview.markdown-preview::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.015;
+  background: 
+    repeating-radial-gradient(#1a1a1a 0 0.0001%, #FF6700 0 0.0002%) 50% 0/2000px 2000px;
+  animation: safeStatic 3s infinite alternate;
+}
+
+/* Subtle scanlines */
+.markdown-preview.markdown-preview::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1001;
+  opacity: 0.008;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 1px,
+      rgba(255, 103, 0, 0.02) 1px,
+      rgba(255, 103, 0, 0.02) 2px
+    );
+  animation: scanlineMove 0.8s infinite linear;
+}
+
+/* Safe animations */
+@keyframes safeStatic {
+  0% { 
+    background-position: 50% 0;
+  }
+  100% { 
+    background-position: 51% 1%;
+  }
+}
+
+@keyframes scanlineMove {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(2px); }
+}
+
+/* Main markdown preview styling */
+.markdown-preview.markdown-preview {
+  // Base dark theme
+  background-color: #0a0a0a;
+  color: #e0e0e0;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', monospace;
+  line-height: 1.6;
+  padding: 2rem;
+  
+  // Enhanced text rendering
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  // Subtle glow on all text
+  text-shadow: 0 0 1px rgba(255, 103, 0, 0.1);
+  
+  // Custom scrollbar
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 6px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 103, 0, 0.4);
+    border-radius: 6px;
+    box-shadow: 0 0 6px rgba(255, 103, 0, 0.3);
+    
+    &:hover {
+      background: rgba(255, 103, 0, 0.6);
+      box-shadow: 0 0 10px rgba(255, 103, 0, 0.5);
+    }
+  }
+  
+  // Headings with glow effects
+  h1, h2, h3, h4, h5, h6 {
+    color: #FF6700;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-shadow: 
+      0 0 8px rgba(255, 103, 0, 0.4),
+      0 0 16px rgba(255, 103, 0, 0.2);
+    border-bottom: 2px solid rgba(255, 103, 0, 0.3);
+    padding-bottom: 0.5rem;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      text-shadow: 
+        0 0 12px rgba(255, 103, 0, 0.6),
+        0 0 24px rgba(255, 103, 0, 0.3);
+      border-bottom-color: rgba(255, 103, 0, 0.6);
+    }
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    border-bottom-width: 3px;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+  
+  // Links with glow effects
+  a {
+    color: #B19CD9;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(177, 156, 217, 0.3);
+    transition: all 0.3s ease;
+    text-shadow: 0 0 4px rgba(177, 156, 217, 0.3);
+    
+    &:hover {
+      color: #FF6700;
+      border-bottom-color: rgba(255, 103, 0, 0.6);
+      text-shadow: 
+        0 0 8px rgba(255, 103, 0, 0.5),
+        0 0 16px rgba(255, 103, 0, 0.2);
+      box-shadow: 0 0 6px rgba(255, 103, 0, 0.2);
+    }
+  }
+  
+  // Code blocks with enhanced styling
+  pre {
+    background: #1a1a1a;
+    border: 1px solid rgba(255, 103, 0, 0.3);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+    box-shadow: 
+      0 0 12px rgba(255, 103, 0, 0.2),
+      0 0 24px rgba(255, 103, 0, 0.1);
+    position: relative;
+    
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #FF6700, #B19CD9, #FF6700);
+      border-radius: 8px 8px 0 0;
+      opacity: 0.6;
+    }
+    
+    code {
+      color: #e0e0e0;
+      font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', monospace;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      text-shadow: 0 0 2px rgba(255, 103, 0, 0.2);
+    }
+  }
+  
+  // Inline code
+  code:not(pre code) {
+    background: rgba(255, 103, 0, 0.1);
+    color: #FF6700;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', monospace;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255, 103, 0, 0.2);
+    box-shadow: 0 0 4px rgba(255, 103, 0, 0.1);
+    text-shadow: 0 0 2px rgba(255, 103, 0, 0.3);
+  }
+  
+  // Blockquotes with glow
+  blockquote {
+    background: rgba(255, 103, 0, 0.05);
+    border-left: 4px solid #FF6700;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 
+      0 0 8px rgba(255, 103, 0, 0.1),
+      0 0 16px rgba(255, 103, 0, 0.05);
+    
+    p {
+      margin: 0;
+      color: #d0d0d0;
+      font-style: italic;
+    }
+  }
+  
+  // Lists with subtle glow
+  ul, ol {
+    padding-left: 2rem;
+    
+    li {
+      margin: 0.5rem 0;
+      color: #e0e0e0;
+      
+      &::marker {
+        color: #FF6700;
+        text-shadow: 0 0 4px rgba(255, 103, 0, 0.4);
+      }
+    }
+  }
+  
+  // Tables with enhanced styling
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1.5rem 0;
+    background: rgba(26, 26, 26, 0.8);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 
+      0 0 12px rgba(255, 103, 0, 0.2),
+      0 0 24px rgba(255, 103, 0, 0.1);
+    
+    th, td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 103, 0, 0.2);
+    }
+    
+    th {
+      background: rgba(255, 103, 0, 0.1);
+      color: #FF6700;
+      font-weight: 600;
+      text-shadow: 0 0 4px rgba(255, 103, 0, 0.4);
+    }
+    
+    tr:hover {
+      background: rgba(255, 103, 0, 0.05);
+    }
+  }
+  
+  // Images with subtle glow
+  img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 
+      0 0 12px rgba(255, 103, 0, 0.2),
+      0 0 24px rgba(255, 103, 0, 0.1);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      box-shadow: 
+        0 0 16px rgba(255, 103, 0, 0.3),
+        0 0 32px rgba(255, 103, 0, 0.15);
+      transform: scale(1.02);
+    }
+  }
+  
+  // Horizontal rules with glow
+  hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #FF6700, transparent);
+    margin: 2rem 0;
+    box-shadow: 0 0 8px rgba(255, 103, 0, 0.4);
+  }
+  
+  // Strong and emphasis
+  strong {
+    color: #FF6700;
+    text-shadow: 0 0 4px rgba(255, 103, 0, 0.3);
+  }
+  
+  em {
+    color: #B19CD9;
+    text-shadow: 0 0 4px rgba(177, 156, 217, 0.3);
+  }
+  
+  // Custom pdf output style
+  @media print {
+    background-color: white !important;
+    color: black !important;
+    
+    &::before, &::after {
+      display: none !important;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      color: black !important;
+      text-shadow: none !important;
+      border-bottom-color: #ccc !important;
+    }
+    
+    a {
+      color: #0066cc !important;
+      text-shadow: none !important;
+    }
+    
+    code {
+      background: #f5f5f5 !important;
+      color: #333 !important;
+      text-shadow: none !important;
+    }
+    
+    pre {
+      background: #f5f5f5 !important;
+      border-color: #ccc !important;
+      box-shadow: none !important;
+    }
+  }
+
+  // Custom prince pdf export style
+  &.prince {
+    // Prince-specific styles for PDF export
+    page-break-inside: avoid;
+    
+    h1, h2, h3 {
+      page-break-after: avoid;
+    }
+    
+    pre, blockquote, table {
+      page-break-inside: avoid;
+    }
+  }
+
+  // Custom presentation style
+  .reveal .slides {
+    // modify all slides
+    background: #0a0a0a;
+    color: #e0e0e0;
+    
+    h1, h2, h3, h4, h5, h6 {
+      color: #FF6700;
+      text-shadow: 
+        0 0 12px rgba(255, 103, 0, 0.5),
+        0 0 24px rgba(255, 103, 0, 0.2);
+    }
+  }
+
+  .slides > section:nth-child(1) {
+    // this will modify `the first slide`
+    h1 {
+      font-size: 3.5rem;
+      text-shadow: 
+        0 0 20px rgba(255, 103, 0, 0.6),
+        0 0 40px rgba(255, 103, 0, 0.3);
+    }
+  }
+}
+
+/* Sidebar TOC styling */
+.md-sidebar-toc.md-sidebar-toc {
+  background: rgba(10, 10, 10, 0.95);
+  border-right: 2px solid rgba(255, 103, 0, 0.3);
+  box-shadow: 
+    0 0 12px rgba(255, 103, 0, 0.2),
+    0 0 24px rgba(255, 103, 0, 0.1);
+  
+  .md-toc {
+    color: #e0e0e0;
+    
+    .md-toc-item {
+      margin: 0.5rem 0;
+      
+      a {
+        color: #e0e0e0;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        text-shadow: 0 0 2px rgba(255, 103, 0, 0.2);
+        
+        &:hover {
+          background: rgba(255, 103, 0, 0.1);
+          color: #FF6700;
+          text-shadow: 
+            0 0 6px rgba(255, 103, 0, 0.4),
+            0 0 12px rgba(255, 103, 0, 0.2);
+          box-shadow: 0 0 6px rgba(255, 103, 0, 0.2);
+        }
+        
+        &.md-toc-active {
+          background: rgba(255, 103, 0, 0.15);
+          color: #FF6700;
+          text-shadow: 
+            0 0 8px rgba(255, 103, 0, 0.5),
+            0 0 16px rgba(255, 103, 0, 0.2);
+          box-shadow: 
+            0 0 8px rgba(255, 103, 0, 0.3),
+            inset 0 0 4px rgba(255, 103, 0, 0.1);
+        }
+      }
+    }
+  }
+  
+  // TOC scrollbar
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: rgba(26, 26, 26, 0.5);
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 103, 0, 0.4);
+    border-radius: 4px;
+    box-shadow: 0 0 4px rgba(255, 103, 0, 0.3);
+    
+    &:hover {
+      background: rgba(255, 103, 0, 0.6);
+      box-shadow: 0 0 6px rgba(255, 103, 0, 0.5);
+    }
+  }
+}

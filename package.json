@@ -2,7 +2,7 @@
   "name": "utility-materials-theme",
   "displayName": "Utility Materials Theme",
   "description": "Industrial safety theme with TV static effects - safety orange colors inspired by utility materials inc (https://utility.materials.nyc)",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "publisher": "utility-materials",
   "icon": "icon.png",
   "author": {
@@ -12,7 +12,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/alexh/utility-materials-theme"
+    "url": "https://github.com/alexh/umi-vs-code-theme"
   },
   "keywords": [
     "theme",
