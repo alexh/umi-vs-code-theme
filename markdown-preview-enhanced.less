@@ -1,5 +1,35 @@
 /* TV Static Dark Mode Theme for Markdown Preview */
 /* Inspired by utility-materials-theme */
+.footer {
+  display: none !important;
+}
+
+/* Additional footer hiding for different selectors */
+.footer.fixed {
+  display: none !important;
+}
+
+div[class*="footer"] {
+  display: none !important;
+}
+
+/* Hide any element with footer in the class name */
+[class*="footer"] {
+  display: none !important;
+}
+
+/* Alternative: Make footer dark instead of hiding */
+.footer.fixed.bottom-0 {
+  background-color: #0a0a0a !important;
+  color: #e0e0e0 !important;
+  border-top: 1px solid rgba(255, 103, 0, 0.3) !important;
+  box-shadow: 0 -2px 8px rgba(255, 103, 0, 0.2) !important;
+}
+
+.footer .backdrop-blur-xl {
+  background-color: rgba(10, 10, 10, 0.95) !important;
+  backdrop-filter: blur(10px) !important;
+}
 
 /* Subtle static overlay effect */
 .markdown-preview.markdown-preview::before {
